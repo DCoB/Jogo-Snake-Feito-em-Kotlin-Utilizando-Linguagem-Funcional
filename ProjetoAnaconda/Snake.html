@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snake</title>
+    <link rel="stylesheet" href="src/snake.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/zicon.png">
+</head>
+<body>
+
+<div id="mySidebar" class = "sidebar" style="display: inline-block">
+    <button id = "btn-Close" class="close"> <a>x</a></button>
+    <img src="img/snakeRank.png"  style="width: 60%; position: absolute; top: 0; right: 0;">
+    <br> <br>
+    <h2 style="text-align: center; color: forestgreen"> Maiores Cobras </h2>
+    <br> <br>
+    <div id="rPlayer" class="player"> Jogador: </div>
+    <div id="rScore" class="score"> Pontuacao: </div>
+</div>
+
+<div id="menu" style="display:block; border:10px solid black; width:650px; height: 745px; text-align:center; margin: 0 auto; border-radius: 15px">
+    <br><br><br><br><br><br>
+    <select id="dificuldade">
+        <option value = 0> Fácil </option>
+        <option value = 1> Médio </option>
+        <option value = 2> Díficil </option>
+    </select>
+    <button class="button" id="botaoPlay" onclick="ProjetoAnaconda.play()">
+        <i class="fa fa-play-circle" aria-hidden="true" style="float: left"></i> Jogar</button>
+    <br><br>
+    <button class="button" id="btn-Ranking" style="width: 200px; display: inline-flex">
+        <img src="img/crownSnake.png" width="60" height="60" style="float: left";>
+        Ranking</button>
+    <br><br>
+    <button class="button" id="botaoRegras" onclick="ProjetoAnaconda.rules()" style="display: inline-flex">
+        <i class="fa fa-spinner" aria-hidden="true" style="float: left"></i> Regras</button>
+    <br><br>
+    <button class="button" id="botaoSobre" onclick="ProjetoAnaconda.about()" style="width: 145px"; display="inline-flex" >
+        <i class="fa fa-commenting" aria-hidden="true" style="float: left"></i> Sobre</button>
+</div>
+
+<div class="img-container" id="playcontainer" style="display: none">
+    <img id="imageFundo" src="img/pantanoDesenho.jpg" style="display: none;">
+
+    <img id="heart1" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 20%;left: 29%;display: none">
+    <img id="heart2" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 30%;left: 29%;display: none">
+    <img id="heart3" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 40%;left: 29%;display: none">
+
+    <img id="heart4" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 20%;left: 29%;display: none">
+    <img id="heart5" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 30%;left: 29%;display: none">
+    <img id="heart6" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 40%;left: 29%;display: none">
+
+    <img id="heart7" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 20%;left: 29%;display: none">
+    <img id="heart8" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 30%;left: 29%;display: none">
+    <img id="heart9" src="img/SnakeHeartColor.png" width="80" height="80" style="position: absolute;top: 40%;left: 29%;display: none">
+
+    <div class="text">
+        <div style="text-align: center;"><h1 class="text-gradient" style="font-size : 55px;">Snake 1.0 - Anaconda Selvagem</h1></div>
+    </div>
+    <div>
+        <canvas class="tela" id ="gameCanvas"  style="border-style:solid;display: none" ></canvas>
+        <canvas class="tela" id ="gameCanvas2"  style="border-style:solid;display: none" ></canvas>
+        <canvas class="tela" id ="gameCanvas3"  style="border-style:solid;display: none" ></canvas>
+    </div>
+
+    <div class="blinking" id="timer1" style="text-align:center;position: absolute;top: 65%; left: 15%;color: red;font-size :  75px" ></div>
+    <div class="blinking" id="timer2" style="text-align:center;position: absolute;top: 65%; left: 50%;color: red;font-size : 75px"></div>
+    <div class="blinking" id="timer3" style="text-align:center;position: absolute;top: 65%; left: 83%;color: red;font-size : 75px"></div>
+
+    <div style="text-align:center;position: absolute;top: 84%; left: 40%;color: forestgreen"><h1 id="score"></h1></div>
+</div>
+
+
+<div style="display:none;">
+    <img id="food" src="img/zapple.png" alt="unknown">
+</div>
+
+<div style="display:none;">
+    <img id="upHead" src="img/zsnakeheadup.png" alt="unknown">
+</div>
+
+<div style="display:none;">
+    <img id="downHead" src="img/zsnakeheaddown.png" alt="unknown">
+</div>
+
+<div style="display:none;">
+    <img id="leftHead" src="img/zsnakeheadleft.png" alt="unknown">
+</div>
+
+<div style="display:none;">
+    <img id="rightHead" src="img/zsnakeheadright.png" alt="unknown">
+</div>
+
+
+<script src="out/production/ProjetoAnaconda/lib/kotlin.js"></script>
+<script src="out/production/ProjetoAnaconda/ProjetoAnaconda.js"></script>
+</body>
+
+</html>
+
